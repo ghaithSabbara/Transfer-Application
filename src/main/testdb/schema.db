@@ -1,0 +1,5 @@
+CREATE TABLE accountTest
+(
+  id INTEGER PRIMARY KEY,
+  balance INTEGER
+);

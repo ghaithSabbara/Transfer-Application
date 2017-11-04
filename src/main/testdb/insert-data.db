@@ -1,0 +1,2 @@
+INSERT INTO accountTest VALUES (1, 1000);
+INSERT INTO accountTest VALUES (2, 1000);
