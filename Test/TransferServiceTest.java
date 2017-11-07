@@ -29,11 +29,11 @@ public class TransferServiceTest {
     }
 
     /* Dev profile test*/
-    @Test
+ /*   @Test
     public void loadAccount() {
         String balance = transferService.testLoadAccount(1);
         Assert.assertEquals(balance, "1000");
-    }
+    }*/
 
     /* Prod profile test*/
     @Test
@@ -42,7 +42,7 @@ public class TransferServiceTest {
         Assert.assertEquals(newBalance, 700.0, 0.001);
     }
 
-    /* Prod profile test*/
+    /*Prod profile test*/
     @Test
     public void monetaryAmount() {
         transferService.monetaryAmount(300.00, 2, 1);

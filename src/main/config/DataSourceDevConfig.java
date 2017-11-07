@@ -16,7 +16,7 @@ import javax.sql.DataSource;
  * Created by GHAITH on 03/11/2017.
  */
 @Configuration
-//@PropertySource("classpath:/main/resources/app-dev.properties")
+@PropertySource("classpath:/main/resources/app-dev.properties")
 @Profile("dev")
 public class DataSourceDevConfig {
 
@@ -26,9 +26,10 @@ public class DataSourceDevConfig {
     @Bean(name = "dataSource")
     public DataSource dataSourceForDev() {
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        return builder.setName("testdb")
+        return builder.setName(env.getProperty("db.name"))
                 .setType(EmbeddedDatabaseType.HSQL)
-                .addScript("classpath:/main/testdb/schema.db")
-                .addScript("classpath:/main/testdb/insert-data.db").build();
+                .addScript(env.getProperty("db.schema"))
+                .addScript(env.getProperty("db.insert-schema"))
+                .build();
     }
 }
